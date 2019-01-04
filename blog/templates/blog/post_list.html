@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>Blog - Olena Kovpak</title>
+    </head>
+    <body>
+        <p>Olena Kovpak's blog</p>
+        {% for post in posts %}
+            {% if post.title %}
+                <p>{{ post.title }}</p>
+            {% endif %}
+            {% if post.image %}
+                <img src='blackberry.jpg'>
+            {% endif %}
+        {% endfor %}
+    </body>
+</html>
