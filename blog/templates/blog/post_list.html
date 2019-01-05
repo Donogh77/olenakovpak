@@ -9,7 +9,8 @@
                 <p>{{ post.title }}</p>
             {% endif %}
             {% if post.image %}
-                <img src='blackberry.jpg'>
+                {% load static %}
+                <img src='{% static '{{ post.image.url }}' %}' alt='Здесь должна быть картинка'>
             {% endif %}
         {% endfor %}
     </body>
