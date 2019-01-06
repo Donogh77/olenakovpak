@@ -1,6 +1,8 @@
 <html>
     <head>
         <title>Blog - Olena Kovpak</title>
+        {% load static %}
+        <link rel='shortcut icon' type='image/png' href='{% static 'images/favicon.ico' %}'/>
     </head>
     <body>
         <p>Olena Kovpak's blog</p>
@@ -9,7 +11,7 @@
                 <p>{{ post.title }}</p>
             {% endif %}
             {% if post.image %}
-                {% load static %}
+                <p>{{ post.image.url }}</p>
                 <img src='{% static '{{ post.image.url }}' %}' alt='Здесь должна быть картинка'>
             {% endif %}
         {% endfor %}
