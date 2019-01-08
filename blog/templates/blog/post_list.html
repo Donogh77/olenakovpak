@@ -1,9 +1,8 @@
 <html>
-{% load staticfiles %}
+    {% load staticfiles %}
     <head>
+        <link rel="icon" type="image/png" sizes="16x16"  href="../static/images/favicon.ico">
         <title>Blog - Olena Kovpak</title>
-<link rel='shortcut icon' type='image/png' href='{% static 'images/favicon.ico' %}'/>
-<link rel="icon" type="image/png" sizes="16x16"  href="../static/images/favicon.ico">
     </head>
     <body>
         <p>Olena Kovpak's blog</p>
@@ -12,8 +11,7 @@
                 <p>{{ post.title }}</p>
             {% endif %}
             {% if post.image %}
-                <p>{{ post.image.url }}</p>
-                <img src="{% static '{{ post.image.url }}' %}" alt="Здесь должна быть картинка" />
+                <img src='{{ post.image.url }}' alt='An image'/>
             {% endif %}
         {% endfor %}
     </body>
