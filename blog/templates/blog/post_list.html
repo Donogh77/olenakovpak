@@ -11,7 +11,7 @@
                 <p>{{ post.title }}</p>
             {% endif %}
             {% if post.image %}
-                <img src='{{ post.image.url }}' alt='An image'/>
+                <img src="{{ post.image.url }}" alt='An image'/>
             {% endif %}
         {% endfor %}
     </body>
