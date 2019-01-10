@@ -21,10 +21,11 @@ from django.views.static import serve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('about/', include('about.urls')),
+    path('about/', include('about.urls')),
     path('works/', include('works.urls')),
     path('eventsandworkshops/', include('eventsandworkshops.urls')),
     path('blog/', include('blog.urls')),
     #path('contacts/', include('contacts.urls')),
     path('static/', serve, {'document_root': settings.STATIC_ROOT}), #
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

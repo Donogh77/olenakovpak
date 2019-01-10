@@ -1,11 +1,11 @@
 <html>
     {% load staticfiles %}
     <head>
-        <link rel="icon" type="image/png" sizes="16x16"  href="../static/images/favicon.ico">
-        <title>Blog - Olena Kovpak</title>
+        <link rel="icon" type="image/png" sizes="16x16"  href="{% static '../static/images/favicon.ico' %}">
+        <title>About Olena Kovpak</title>
     </head>
     <body>
-        <p>Olena Kovpak's events and workshops</p>
+        <p>Olena Kovpak: about an artist</p>
         {% for post in posts %}
             {% if post.text %}
                 <p>{{ post.text }}</p>
