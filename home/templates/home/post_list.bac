@@ -1,0 +1,18 @@
+<html>
+    {% load staticfiles %}
+    <head>
+        <link rel="icon" type="image/png" sizes="16x16"  href="../static/images/favicon.ico">
+        <title>Welcome! - Olena Kovpak's site</title>
+    </head>
+    <body>
+        <p>Welcome!</p>
+        {% for post in posts %}
+            {% if post.text %}
+                <p>{{ post.text|linebreaksbr }}</p>
+            {% endif %}
+            {% if post.image %}
+                <img src="{{ post.image.url }}" alt='An image'/>
+            {% endif %}
+        {% endfor %}
+    </body>
+</html>
