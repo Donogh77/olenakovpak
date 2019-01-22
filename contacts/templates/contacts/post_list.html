@@ -2,10 +2,10 @@
     {% load staticfiles %}
     <head>
         <link rel="icon" type="image/png" sizes="16x16"  href="{% static 'favicon.ico' %}">
-        <title>Events and workshops - Olena Kovpak</title>
+        <title>Contacts - Olena Kovpak</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'eventsandworkshops.css' %}">
+        <link rel="stylesheet" href="{% static 'about.css' %}">
     </head>
     <body style="background-color:rgb(235,235,235); overflow-x:hidden;">
         <div class="page-header">
@@ -13,9 +13,9 @@
                 <a href="/home/" style="position:absolute; top:1.5em; left:4em;">HOME</a>
                 <a href="/about/" style="position:absolute; top:1.5em; left:10em;">ABOUT</a>
                 <a href="/works/" style="position:absolute; top:1.5em; left:16.75em;">WORKS</a>
-                <a href="/eventsandworkshops/" style="color:white; position:absolute; top:1.5em; left:23.75em;">EVENTS&amp;WORKSHOPS</a>
+                <a href="/eventsandworkshops/" style="position:absolute; top:1.5em; left:23.75em;">EVENTS&amp;WORKSHOPS</a>
                 <a href="/blog/" style="position:absolute; top:1.5em; left:39.75em;">BLOG</a>
-                <a href="/contacts/" style="position:absolute; top:1.5em; left:45.6em;">CONTACTS</a>
+                <a href="/contacts/" style="color:white; position:absolute; top:1.5em; left:45.6em;">CONTACTS</a>
             </h1>
         </div>
         <div>
@@ -25,19 +25,13 @@
         <div class="content container" style="margin-top:5.7em;">
             <div class="row">
                 <div class="col-md-8">
-                    <h1>OLENA KOVPAK'S EVENTS AND WORKSHOPS</h1>
-                    {% for post in posts %}
-                        <div class="post">
-                            {% if post.text %}
-                                {{ post.text|linebreaksbr }}
-                            {% endif %}
-                            <p/>
-                            <p/>
-                            {% if post.image %}
-                                <img src="{{ post.image.url }}" alt='An image' style="float:right"/>
-                            {% endif %}
-                        </div>
-                    {% endfor %}
+                    You can send your message to the artist here:
+                    <p/>
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit">SEND MESSAGE</button>
+                    </form>
                 </div>
             </div>
         </div>
