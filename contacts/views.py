@@ -17,14 +17,19 @@ def contacts(request):
         form = SubmitForm(request.POST)
         if form.is_valid():
             subject = form.cleaned_data['your_name'] + ' sent you a message'
+            message = form.cleaned_data['message']
+            your_email = form.cleaned_data['your_email']
             try:
+                import olenakovpak.sendgridmail
+                '''
                 send_mail(
                     subject,
-                    form.cleaned_data['message'],
-                    form.cleaned_data['your_email'],
+                    message,
+                    your_email,
                     ('donogh@ya.ru',),
                     fail_silently=False,
                 )
+                '''
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return HttpResponseRedirect('/home/')
