@@ -20,8 +20,6 @@ def contacts(request):
             message = form.cleaned_data['message']
             your_email = form.cleaned_data['your_email']
             try:
-                import olenakovpak.sendgridmail
-                '''
                 send_mail(
                     subject,
                     message,
@@ -29,7 +27,6 @@ def contacts(request):
                     ('donogh@ya.ru',),
                     fail_silently=False,
                 )
-                '''
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return HttpResponseRedirect('/home/')
