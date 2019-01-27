@@ -129,5 +129,5 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'files', 'media')
 
 EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
-SENDGRID_API_KEY = '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'
+SENDGRID_API_KEY = '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'
 SENDGRID_SANDBOX_MODE_IN_DEBUG = False

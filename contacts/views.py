@@ -16,17 +16,30 @@ def contacts(request):
     if request.method == 'POST':
         form = SubmitForm(request.POST)
         if form.is_valid():
-            subject = form.cleaned_data['your_name'] + ' sent you a message'
+            your_subject = form.cleaned_data['your_name'] + ' sent you a message'
             message = form.cleaned_data['message']
             your_email = form.cleaned_data['your_email']
             try:
+                import sendgrid
+                import os
+                from sendgrid.helpers.mail import Email, Content, Mail
+                
+                sg = sendgrid.SendGridAPIClient(apikey=os.environ.get('SENDGRID_API_KEY'))
+                from_email = Email(your_email)
+                subject = your_subject
+                to_email = Email("donogh@ya.ru")
+                content = Content("text/plain", message)
+                mail = Mail(from_email, subject, to_email, content)
+                response = sg.client.mail.send.post(request_body=mail.get())
+                '''
                 send_mail(
-                    subject,
+                    your_subject,
                     message,
                     your_email,
                     ('donogh@ya.ru',),
                     fail_silently=False,
                 )
+                '''
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return HttpResponseRedirect('/home/')
