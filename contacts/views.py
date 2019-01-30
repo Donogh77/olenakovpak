@@ -17,8 +17,8 @@ def contacts(request):
         form = SubmitForm(request.POST)
         if form.is_valid():
             your_subject = form.cleaned_data['your_name'] + ' sent you a message'
-            message = form.cleaned_data['message']
-            your_email = form.cleaned_data['your_email']
+            message = 'A message from ' + form.cleaned_data['your_email'] + ':\n\n' + form.cleaned_data['message']
+            your_email = '"' + form.cleaned_data['your_email'] + '"'
             try:
                 send_mail(
                     your_subject,
@@ -29,7 +29,7 @@ def contacts(request):
                 )
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
-            return HttpResponseRedirect('/home/')
+            return render(request, 'contacts/email_sent.html', {})
     else:
         form = SubmitForm()
     return render(request, 'contacts/post_list.html', {'form': form})
