@@ -1,0 +1,54 @@
+<html>
+    {% load staticfiles %}
+    <head>
+        <link rel="icon" type="image/png" sizes="16x16"  href="{% static 'favicon.ico' %}">
+        <title>Illustrations - Olena Kovpak</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'illustrations.css' %}">
+        <script src="{% static 'lightbox-plus-jquery.min.js' %}"></script>
+        <link href="{% static 'css/lightbox.min.css' %}" rel="stylesheet" />
+    </head>
+    <body style="background-color:rgb(235,235,235); overflow-x:hidden;">
+        <div class="page-header">
+            <h1>
+                <a href=".." style="position:absolute; top:1.5em; left:4em;">HOME</a>
+                <a href="/about/" style="position:absolute; top:1.5em; left:10em;">ABOUT</a>
+                <a href="/works/" style="color:white; position:absolute; top:1.5em; left:16.75em;">WORKS</a>
+                <a href="/eventsandworkshops/" style="position:absolute; top:1.5em; left:23.75em;">EVENTS&amp;WORKSHOPS</a>
+                <a href="/blog/" style="position:absolute; top:1.5em; left:39.75em;">BLOG</a>
+                <a href="/contacts/" style="position:absolute; top:1.5em; left:45.6em;">CONTACTS</a>
+            </h1>
+        </div>
+        <div>
+            <h1><a href=".." style="text-decoration:none; background-color:rgb(131,170,162); color:white; display:block; text-align:center; margin-top:0em; padding-top:3.5em; padding-bottom:2.5em;">OLENA KOVPAK FINE ART &copy;</a></h1>
+        </div>
+        <h3><a href="../botanical/" style="position:absolute;top:18em;left:1em;">BOTANICAL ILLUSTRATIONS</a></h3>
+        <h3><a href="../genre/" style="position:absolute; top:20em;left:1em;">GENRE PAINTINGS &amp; PORTRAITS</a></h3>
+        <h3><a href="../illustrations/" style="position:absolute; top:22em;left:1em;background-color:rgb(250,250,255);">ILLUSTRATIONS</a></h3>
+        <h3><a href="../still/" style="position:absolute; top:24em;left:1em;">STILL LIFE PAINTINGS</a></h3>
+        <h3><a href="../landscape/" style="position:absolute; top:26em;left:1em;">LANDSCAPE PAINTINGS</a></h3>
+        <h3><a href="../sketches/" style="position:absolute; top:28em;left:1em;">SKETCHES</a></h3>
+        <img src="{% static 'canson.png' %}" style="position:absolute; top:55em; left:10em;" alt="Sponsored logo"/>
+        <div class="content container" style="margin-top:5.7em;">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1>OLENA KOVPAK'S ILLUSTRATIONS</h1>
+                    {% for post in posts %}
+                        <div class="post" style="padding-right:3.75em;">
+                            {% if post.text %}
+                                {{ post.text|linebreaksbr }}
+                            {% endif %}
+                            <br/>
+                            {% if post.image %}
+                                <a href="{{ post.image.url }}" data-lightbox="Olena's illustrations">
+                                    <img src="{{ post.image.url }}" alt="An image" style="width:45em;">
+                                </a>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

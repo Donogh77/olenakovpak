@@ -22,12 +22,18 @@ from contacts import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', include('home.urls')),
+    path('', include('home.urls')),
     path('about/', include('about.urls')),
     path('works/', include('works.urls')),
     path('eventsandworkshops/', include('eventsandworkshops.urls')),
     path('blog/', include('blog.urls')),
     path('contacts/', views.contacts, name='contacts'),
-    path('static/', serve, {'document_root': settings.STATIC_ROOT}), #
+    path('works/botanical/', include('botanical.urls')),
+    path('works/genre/', include('genre.urls')),
+    path('works/illustrations/', include('illustrations.urls')),
+    path('works/still/', include('still.urls')),
+    path('works/landscape/', include('landscape.urls')),
+    path('works/sketches/', include('sketches.urls')),
+    path('static/', serve, {'document_root': settings.STATIC_ROOT}),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

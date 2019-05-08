@@ -5,13 +5,13 @@
         <title>Contacts - Olena Kovpak</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'about.css' %}">
+        <link rel="stylesheet" href="{% static 'contacts.css' %}">
         <script src='https://www.google.com/recaptcha/api.js'></script>
     </head>
     <body style="background-color:rgb(235,235,235); overflow-x:hidden;">
         <div class="page-header">
             <h1>
-                <a href="/home/" style="position:absolute; top:1.5em; left:4em;">HOME</a>
+                <a href=".." style="position:absolute; top:1.5em; left:4em;">HOME</a>
                 <a href="/about/" style="position:absolute; top:1.5em; left:10em;">ABOUT</a>
                 <a href="/works/" style="position:absolute; top:1.5em; left:16.75em;">WORKS</a>
                 <a href="/eventsandworkshops/" style="position:absolute; top:1.5em; left:23.75em;">EVENTS&amp;WORKSHOPS</a>
@@ -20,7 +20,7 @@
             </h1>
         </div>
         <div>
-            <h1><a href="/home" style="text-decoration:none; background-color:rgb(131,170,162); color:white; display:block; text-align:center; margin-top:0em; padding-top:3.5em; padding-bottom:2.5em;">OLENA KOVPAK FINE ART &copy;</a></h1>
+            <h1><a href=".." style="text-decoration:none; background-color:rgb(131,170,162); color:white; display:block; text-align:center; margin-top:0em; padding-top:3.5em; padding-bottom:2.5em;">OLENA KOVPAK FINE ART &copy;</a></h1>
         </div>
         <img src="{% static 'canson.png' %}" style="position:absolute; top:35em; left:10em;" alt="Sponsored logo"/>
         <div class="content container" style="margin-top:5.7em;">
@@ -31,7 +31,7 @@
                     <form method="POST">
                         {% csrf_token %}
                         {{ form.as_p }}
-                        <div class="g-recaptcha" data-sitekey=""></div>
+                        <div class="g-recaptcha" data-sitekey="6Lf27I0UAAAAAGzaNC7pFY6GGkxamcCxDEcV-Aef"></div>
                         <button type="submit">SEND MESSAGE</button>
                     </form>
                 </div>

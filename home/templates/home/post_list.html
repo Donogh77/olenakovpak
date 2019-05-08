@@ -8,9 +8,19 @@
         <link rel="stylesheet" href="{% static 'home.css' %}">
     </head>
     <body style="background-color:rgb(235,235,235); overflow-x:hidden;">
+        
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = 'https://connect.facebook.net/en_EN/sdk.js#xfbml=1&version=v3.2';
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        
         <div class="page-header">
             <h1>
-                <a href="/home/" style="color:white; position:absolute; top:1.5em; left:4em;">HOME</a>
+                <a href=".." style="color:white; position:absolute; top:1.5em; left:4em;">HOME</a>
                 <a href="/about/" style="position:absolute; top:1.5em; left:10em;">ABOUT</a>
                 <a href="/works/" style="position:absolute; top:1.5em; left:16.75em;">WORKS</a>
                 <a href="/eventsandworkshops/" style="position:absolute; top:1.5em; left:23.75em;">EVENTS&amp;WORKSHOPS</a>
@@ -19,7 +29,7 @@
             </h1>
         </div>
         <div>
-            <h1><a href="/home" style="text-decoration:none; background-color:rgb(131,170,162); color:white; display:block; text-align:center; margin-top:0em; padding-top:3.5em; padding-bottom:2.5em;">OLENA KOVPAK FINE ART &copy;</a></h1>
+            <h1><a href=".." style="text-decoration:none; background-color:rgb(131,170,162); color:white; display:block; text-align:center; margin-top:0em; padding-top:3.5em; padding-bottom:2.5em;">OLENA KOVPAK FINE ART &copy;</a></h1>
         </div>
         <img src="{% static 'canson.png' %}" style="position:absolute; top:35em; left:10em;" alt="Sponsored logo"/>
         <div class="content container" style="margin-top:5.7em;">
@@ -34,11 +44,15 @@
                             <p/>
                             <p/>
                             {% if post.image %}
-                                <img src="{{ post.image.url }}" alt='An image' style="float:right"/>
+                                <img src="{{ post.image.url }}" alt='An image' style="float:right; width:45em;"/>
                             {% endif %}
                         </div>
                     {% endfor %}
                 </div>
+            </div>
+            <p/>
+            <div>
+            <div class="fb-share-button" data-href="https://olenakovpak.pythonanywhere.com/" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Folenakovpak.pythonanywhere.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
             </div>
         </div>
         <p></p>

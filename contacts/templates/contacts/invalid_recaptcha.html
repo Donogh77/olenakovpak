@@ -1,0 +1,39 @@
+<html>
+    {% load staticfiles %}
+    <head>
+        <link rel="icon" type="image/png" sizes="16x16"  href="{% static 'favicon.ico' %}">
+        <title>Invalid reCAPTCHA - Olena Kovpak</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'contacts.css' %}">
+    </head>
+    <body style="background-color:rgb(235,235,235); overflow-x:hidden; overflow-y:hidden;">
+        <div class="page-header">
+            <h1>
+                <a href=".." style="position:absolute; top:1.5em; left:4em;">HOME</a>
+                <a href="/about/" style="position:absolute; top:1.5em; left:10em;">ABOUT</a>
+                <a href="/works/" style="position:absolute; top:1.5em; left:16.75em;">WORKS</a>
+                <a href="/eventsandworkshops/" style="position:absolute; top:1.5em; left:23.75em;">EVENTS&amp;WORKSHOPS</a>
+                <a href="/blog/" style="position:absolute; top:1.5em; left:39.75em;">BLOG</a>
+                <a href="/contacts/" style="position:absolute; top:1.5em; left:45.6em;">CONTACTS</a>
+            </h1>
+        </div>
+        <div>
+            <h1><a href=".." style="text-decoration:none; background-color:rgb(131,170,162); color:white; display:block; text-align:center; margin-top:0em; padding-top:3.5em; padding-bottom:2.5em;">YOU HAVE ENTERED INVALID RECAPTCHA</a></h1>
+        </div>
+        <div class="content container" style="margin-top:5.7em;">
+            <div class="row">
+                <div class="col-md-8">
+                    Please try again!
+                    <p/>
+                    <form method="GET">
+                        <button type="submit">I WANT TO SEND ANOTHER MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <p></p>
+        <p></p>
+        <p></p>
+    </body>
+</html>

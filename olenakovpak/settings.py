@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'jtr%p%&h79*m!w50g(ell#cn4)*d*jnp3)dw(97@3(#^r1$$es'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -42,6 +42,12 @@ INSTALLED_APPS = [
     'eventsandworkshops',
     'blog',
     'contacts',
+    'botanical',
+    'genre',
+    'illustrations',
+    'still',
+    'landscape',
+    'sketches',
 ]
 
 MIDDLEWARE = [
@@ -130,6 +136,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'files', 'media')
 
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_HOST_USER = "donogh77@gmail.com"
-EMAIL_HOST_PASSWORD = ''
+
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
